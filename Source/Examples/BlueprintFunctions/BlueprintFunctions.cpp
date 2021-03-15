@@ -3,6 +3,9 @@
 
 #include "BlueprintFunctions.h"
 
+#define LOG(Text) UE_LOG(LogTemp, Warning, TEXT(Text))
+#define LOG_STRING(PARAM) UE_LOG(LogTemp, Warning, TEXT("%s"), *PARAM)
+
 void ABlueprintFunctions::ConsoleCallableFunction() { LOG("ConsoleCallableFunction Called") }
 void ABlueprintFunctions::BlueprintCallableFunction() { LOG("BlueprintCallableFunction Called") }
 void ABlueprintFunctions::EditorCallableFunction() { LOG("EditorCallableFunction Called") }
@@ -27,5 +30,6 @@ void ABlueprintFunctions::MaterialParameterCollectionFunction(UMaterialParameter
 int32 ABlueprintFunctions::BreakableFunction(int32 Arg1, int32 Arg2, int32 Arg3, int32 Arg4) { LOG("MaterialParameterCollectionFunction Called") return 0; }
 void ABlueprintFunctions::LongTooltipFunction() { LOG("LongTooltipFunction Called") }
 void ABlueprintFunctions::ShortTooltipFunction() { LOG("ShortTooltipFunction Called") }
-void ABlueprintFunctions::BlueprintSetterFunction(const int32 NewNumber) { LOG("BlueprintSetterFunction Called") Number = NewNumber; }
-int32 ABlueprintFunctions::BlueprintGetterFunction()  { LOG("BlueprintGetterFunction Called") return Number; }
+void ABlueprintFunctions::InternalFunction() { LOG("ShortTooltipFunction Called") }
+
+

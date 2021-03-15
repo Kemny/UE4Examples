@@ -6,8 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "BlueprintFunctions.generated.h"
 
-#define LOG(Text) UE_LOG(LogTemp, Warning, TEXT(Text))
-#define LOG_STRING(PARAM) UE_LOG(LogTemp, Warning, TEXT("%s"), *PARAM)
+
 
 // Custom Enum For ExpandEnumAsExecs
 UENUM()
@@ -125,21 +124,11 @@ protected:
 	// For Short Tooltips
 	UFUNCTION(BlueprintCallable, Category = "Examples", meta = (ShortToolTip="Short tooltip"))
     void ShortTooltipFunction();
-	
-protected:
-	// BlueprintInternalUseOnly means these functions can't be called by themselves
 
-	// Setter Function for Number Variable
+	// Won't be visible in the editor
 	UFUNCTION(BlueprintCallable, BlueprintInternalUseOnly)
-	void BlueprintSetterFunction(const int32 NewNumber);
+	void InternalFunction();
+	
 
-	// Getter Function for Number Variable
-	UFUNCTION(BlueprintPure, BlueprintInternalUseOnly)
-    int32 BlueprintGetterFunction();
-
-private:
-	// Number Variable, Hidden from blueprints
-	UPROPERTY(BlueprintGetter = BlueprintPureFunction, BlueprintSetter = BlueprintSetterFunction)
-	int32 Number = 0;
 
 };
