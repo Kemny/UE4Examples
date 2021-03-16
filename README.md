@@ -8,5 +8,7 @@ Current Examples:
 * Most used UPROPERTIES
 * Blueprint to c++ parser
 * c++ and blueprint exposed multithreading
+* Bitmasks/Bitflags
+* Most used Asserts
 
 I'll try to update this frequently.
